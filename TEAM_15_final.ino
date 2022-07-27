@@ -46,56 +46,56 @@ void loop() {
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(2000);  
-//bottom horizontal right to left (point 1 to 2)
+// (point 1 to 2)
 myMotorDriver.setDrive( LEFT_MOTOR, 0 , 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
 delay(1000);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(2000);
-//bottom horizontal right to left (point 2 to 3)
+// (point 2 to 3)
 myMotorDriver.setDrive( LEFT_MOTOR, 1 , 170);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(1000);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(2000);
-//bottom horizontal right to left (point 3 to 4)
+// (point 3 to 4)
 myMotorDriver.setDrive( LEFT_MOTOR, 0 , 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 170);
 delay(980);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(2000);
-//left roof(point 4 to 5)
+//(point 4 to 5)
 myMotorDriver.setDrive( LEFT_MOTOR,1, 170);
 myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
 delay(500);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(2000);
-//right roof(point 5 to 6)
+//(point 5 to 6)
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 170);
 myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
 delay(500);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(2000); 
-// right to left diagonal top to bottom (point 6 to 7)
+//  (point 6 to 7)
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 170);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 170);
 delay(1000);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(2000);
-// right to left diagonal top to bottom (point 7 to 8)
+//(point 7 to 8)
 myMotorDriver.setDrive( LEFT_MOTOR, 1, 170);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(990);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(2000);
-// right to left diagonal top to bottom (point 8 to 9)
+//  (point 8 to 9)
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 170);
 myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
 delay(1000);
