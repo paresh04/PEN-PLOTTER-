@@ -1,25 +1,12 @@
-char datap;
 #include <dummy.h>
 #include <Arduino.h>
 #include <stdint.h>
 #include "SCMD.h"
 #include "SCMD_config.h" //Contains #defines for common SCMD register names and values
 #include "Wire.h"
-SCMD myMotorDriver;
-void setup()
-{
-Serial.begin(9600);
-}
-void loop()
-#define LEFT_MOTOR 0
-#define RIGHT_MOTOR 1
-{
- if (Serial.available())
-   {
-    datap = Serial.read();
-    Serial.println(datap);
-    }
- if (datap=='1')
+
+SCMD myMotorDriver; 
+void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
 Serial.println("Starting sketch.");
@@ -52,33 +39,37 @@ myMotorDriver.inversionMode(1, 1); //invert motor 1
 while ( myMotorDriver.busy() );
 myMotorDriver.enable(); //Enables the output driver hardware
 }
-void main()
-{
- SCMD myMotorDriver;
+#define LEFT_MOTOR 0
+#define RIGHT_MOTOR 1
+
+void loop() {
+myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
+myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
+delay(2000);  
 //bottom horizontal right to left (point 1 to 2)
-myMotorDriver.setDrive( LEFT_MOTOR, 0 , 170);
-myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
+myMotorDriver.setDrive( LEFT_MOTOR, 0 , 0);
+myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
 delay(1000);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(2000);
-//top to bottom right vertical (point 2 to 3)
-myMotorDriver.setDrive( LEFT_MOTOR,0, 0);
-myMotorDriver.setDrive( RIGHT_MOTOR, 0, 170);
-delay(1000);
-myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
-myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
-delay(2000);
-// right to left horizonatl top (point 3 to 4)
+//bottom horizontal right to left (point 2 to 3)
 myMotorDriver.setDrive( LEFT_MOTOR, 1 , 170);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
 delay(1000);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
-delay(2000); 
-//left roof(point 4 to 5)
-myMotorDriver.setDrive( LEFT_MOTOR,0, 170);
+delay(2000);
+//bottom horizontal right to left (point 3 to 4)
+myMotorDriver.setDrive( LEFT_MOTOR, 0 , 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 170);
+delay(980);
+myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
+myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
+delay(2000);
+//left roof(point 4 to 5)
+myMotorDriver.setDrive( LEFT_MOTOR,1, 170);
+myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
 delay(500);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
@@ -89,29 +80,29 @@ myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
 delay(500);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
-delay(2000);    
+delay(2000); 
 // right to left diagonal top to bottom (point 6 to 7)
-myMotorDriver.setDrive( LEFT_MOTOR, 1, 170);
-myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
-delay(1000);
-myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
-myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
-delay(2000);
-// right to left horizonatl top (point 7 to 8)
-myMotorDriver.setDrive( LEFT_MOTOR, 0 ,0);
+myMotorDriver.setDrive( LEFT_MOTOR, 0, 170);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 170);
 delay(1000);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
-delay(2000);      
+delay(2000);
+// right to left diagonal top to bottom (point 7 to 8)
+myMotorDriver.setDrive( LEFT_MOTOR, 1, 170);
+myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
+delay(990);
+myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
+myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
+delay(2000);
 // right to left diagonal top to bottom (point 8 to 9)
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 170);
 myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
 delay(1000);
 myMotorDriver.setDrive( LEFT_MOTOR, 0, 0);
 myMotorDriver.setDrive( RIGHT_MOTOR, 0, 0);
-delay(2000);
-}
-else if (datap=='0')
- Serial.println("Welcome to pen plotter TEAM 15");   
+delay(2000);  
+myMotorDriver.setDrive( LEFT_MOTOR, 0 , 0);
+myMotorDriver.setDrive( RIGHT_MOTOR, 1, 170);
+delay(500);
 }
